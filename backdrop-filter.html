@@ -7,25 +7,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/bootstrap.css">
   <title>Backdrop-Filter</title>
+  <style>
+    body {
+      height: 100%;
+      background: url('./images/background.jpeg') fixed no-repeat center center/cover;
+    }
+
+    .box {
+      height: 10vh;
+    }
+
+    #arrow-left {
+      display: none !important;
+    }
+
+    .text-shadow {
+      text-shadow: inherit;
+      text-shadow: 0px 0px 2.5px rgba(0, 0, 0, 1);
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+      text-shadow: 0px 0px 7.5px rgba(0, 0, 0, 1);
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    }
+
+    .rounded-start-lg {
+      border-top-left-radius: 2.25rem !important;
+      border-top-right-radius: 2.25rem !important;
+    }
+
+    .rounded-end-lg {
+      border-bottom-left-radius: 2.25rem !important;
+      border-bottom-right-radius: 2.25rem !important;
+    }
+
+    .none {
+      backdrop-filter: none;
+    }
+
+    .grayscale {
+      backdrop-filter: grayscale(1);
+    }
+
+    .brightness {
+      backdrop-filter: brightness(1.5);
+    }
+
+    .blur {
+      backdrop-filter: blur(5px);
+    }
+
+    .contrast {
+      backdrop-filter: contrast(.8);
+    }
+
+    .invert {
+      backdrop-filter: invert(.7);
+    }
+
+    .opacity {
+      backdrop-filter: opacity(.4);
+    }
+
+    .sepia {
+      backdrop-filter: sepia(.4);
+    }
+
+    .saturate {
+      backdrop-filter: saturate(1.8);
+    }
+
+    .hue-rotate {
+      backdrop-filter: hue-rotate(120deg);
+    }
+
+    @media (min-width: 992px) {
+
+      .box-lg {
+        height: 80vh;
+      }
+
+      .box-lg-end {
+        width: 24px;
+        height: 80vh;
+      }
+
+      .rounded-start-lg {
+        border-bottom-left-radius: 2.25rem !important;
+        border-top-left-radius: 2.25rem !important;
+        border-top-right-radius: 0rem !important;
+      }
+
+      .rounded-end-lg {
+        border-top-right-radius: 2.25rem !important;
+        border-bottom-right-radius: 2.25rem !important;
+        border-bottom-left-radius: 0rem !important;
+      }
+
+      #arrow-down {
+        display: none !important;
+      }
+
+      #arrow-left {
+        display: flex !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col">SCROLL</div>
-      <div class="col">backdrop-filter<br>效果</div>
-      <div class="col">backdrop-filter: none</div>
-      <div class="col">backdrop-filter: grayscale(1)</div>
-      <div class="col">backdrop-filter: brightness(1.5)</div>
-      <div class="col">backdrop-filter: blur(5px)</div>
-      <div class="col">backdrop-filter: contrast(0.8)</div>
-      <div class="col">backdrop-filter: invert(0.7)</div>
-      <div class="col">backdrop-filter: opacity(0.4)</div>
-      <div class="col">backdrop-filter: sepia(0.4)</div>
-      <div class="col">backdrop-filter: saturate(1.8)</div>
-      <div class="col">backdrop-filter: hue-rotate(120deg)</div>
+    <div class="row m-4 g-lg-5 flex-lg-nowrap justify-content-start text-center text-light text-shadow fs-4">
+      <div id="arrow-down"
+        class="box box-lg col-12 col-lg-3 d-flex justify-content-center align-items-center text-dark">
+        SCROLL<br>↓</div>
+      <div id="arrow-left"
+        class="box box-lg col-12 col-lg-3 d-flex justify-content-center align-items-center text-dark fs-2">
+        SCROLL&nbsp;→</div>
+      <div
+        class="box box-lg col-12 col-lg-3 border rounded-start-lg d-flex justify-content-center align-items-center fs-2">
+        backdrop-filter&nbsp;效果</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center none">
+        backdrop-filter: none</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center grayscale">
+        backdrop-filter: grayscale(1)</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center brightness">
+        backdrop-filter: brightness(1.5)</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center blur">
+        backdrop-filter: blur(5px)</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center contrast">
+        backdrop-filter: contrast(0.8)</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center invert">
+        backdrop-filter: invert(0.7)</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center opacity">
+        backdrop-filter: opacity(0.4)</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center sepia">
+        backdrop-filter: sepia(0.4)</div>
+      <div class="box box-lg col-12 col-lg-3 border d-flex justify-content-center align-items-center saturate">
+        backdrop-filter: saturate(1.8)</div>
+      <div
+        class="box box-lg col-12 col-lg-3 border rounded-end-lg d-flex justify-content-center align-items-center hue-rotate">
+        backdrop-filter: hue-rotate(120deg)</div>
+      <div class="box-lg-end"></div>
     </div>
   </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.9/jquery.mousewheel.min.js'></script>
+  <script>
+    $("html, body").mousewheel(function (event, delta) {
+      this.scrollLeft -= (delta * 600);
+      event.preventDefault();
+    });
+
+
+  </script>
 </body>
 
 </html>
